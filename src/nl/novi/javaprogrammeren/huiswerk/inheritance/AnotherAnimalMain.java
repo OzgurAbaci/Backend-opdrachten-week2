@@ -46,7 +46,8 @@ public class AnotherAnimalMain {
     beargumenteren.
      */
     public static void main(String[] args) {
-
+        Animal sjakie = new Lion("Sjakie", "f");
+        sjakie.makeSound();
     }
 
 }
