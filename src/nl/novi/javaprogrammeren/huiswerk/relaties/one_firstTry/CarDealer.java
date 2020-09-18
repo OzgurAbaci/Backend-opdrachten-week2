@@ -1,43 +1,40 @@
-package nl.novi.javaprogrammeren.huiswerk.relaties.one;
+package nl.novi.javaprogrammeren.huiswerk.relaties.one_firstTry;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarOwner {
+public class CarDealer {
     private String name;
     private String city;
     private List<Car> cars;
-    private int age;
 
-    public CarOwner(String name, int age){
+    public CarDealer(String name, String city) {
         this.name = name;
-        this.age = age;
+        this.city = city;
         this.cars = new ArrayList<>();
     }
 
-    public void addCar(Car newcar){
+    public void addCar(Car newcar) {
         this.cars.add(newcar);
+
     }
 
-    public void removeCar(Car soldCar){
-        cars.remove(soldCar);
+    public void removeCar(Car soldCar) {
+        this.cars.remove(soldCar);
     }
 
-    public boolean hasCar(Car newcar) {
+    public void sellCar(Car soldCar, CarOwner newOwner) {
+        soldCar.sellTo(newOwner);
+        //this.cars.remove(soldCar);
+    }
+
+    public boolean hasCar(Car newcar){
         boolean result = false;
-        for (Car car : cars) {
+        for(Car car: this.cars) {
             if (car.getLicensePlate().equals(newcar.getLicensePlate()))
                 result = true;
         }
         return result;
-    }
-
-    public int getAge() {
-        return this.age;
-    }
-
-    public String getName(){
-        return this.name;
     }
 
     public String getCars(){
@@ -47,6 +44,4 @@ public class CarOwner {
         }
         return result;
     }
-
-
 }

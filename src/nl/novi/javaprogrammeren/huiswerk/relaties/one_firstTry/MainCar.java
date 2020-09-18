@@ -1,4 +1,4 @@
-package nl.novi.javaprogrammeren.huiswerk.relaties.one;
+package nl.novi.javaprogrammeren.huiswerk.relaties.one_firstTry;
 
 public class MainCar {
     /*
