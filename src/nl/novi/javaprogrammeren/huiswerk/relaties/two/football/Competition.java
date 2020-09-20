@@ -1,4 +1,4 @@
-package nl.novi.javaprogrammeren.huiswerk.relaties.two;
+package nl.novi.javaprogrammeren.huiswerk.relaties.two.football;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,27 +11,27 @@ public class Competition {
         this.name = name;
     }
 
-    private void addClub(Club club){
+    void addClubForSwap(Club club){
         clubs.add(club);
         club.setCompetition(this);
     }
 
-    private void removeClub(Club club){
+    void removeClub(Club club){
         clubs.remove(club);
-        club.removeCompetition();
+        club.setCompetition(null);
     }
 
     public void swapClubs(Club clubIn, Club  clubOut){
         if(clubs.contains(clubOut) && !clubs.contains(clubIn)){
             removeClub(clubOut);
-            addClub(clubIn);
+            addClubForSwap(clubIn);
 
         }
     }
 
-    public void addClubInitial(Club club){
+    public void addClub(Club club){
         if(clubs.size() < 18){
-            addClub(club);
+            addClubForSwap(club);
         }
     }
 
