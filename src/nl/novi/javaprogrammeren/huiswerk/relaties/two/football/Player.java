@@ -1,4 +1,4 @@
-package nl.novi.javaprogrammeren.huiswerk.relaties.two;
+package nl.novi.javaprogrammeren.huiswerk.relaties.two.football;
 
 public class Player {
     private String name;
@@ -21,23 +21,6 @@ public class Player {
             return;
         }
         System.out.println("Speler " + name + " speel bij club " + club.getName() + " in de competitie " + club.getCompetition().getName() + "." );
-    }
-
-    public void joinClub (Club club){
-        if(club.addPlayer(this)){
-            this.club = club;
-        }
-    }
-
-    public void leaveClub(){
-        if (club == null){
-            System.out.println(name + " speelt niet in een club en kan de club dus ook niet verlaten.");
-            return;
-        }
-        if (club.removePlayer(this)){
-            System.out.println(name + " heeft de club " + club.getName() + " verlaten.");
-            club == null;
-        }
     }
 
     //getters en setters

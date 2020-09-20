@@ -1,4 +1,4 @@
-package nl.novi.javaprogrammeren.huiswerk.relaties.two;
+package nl.novi.javaprogrammeren.huiswerk.relaties.two.football;
 
 import java.util.List;
 
