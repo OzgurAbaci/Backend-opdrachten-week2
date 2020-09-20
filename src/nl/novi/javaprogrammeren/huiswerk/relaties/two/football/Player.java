@@ -40,7 +40,13 @@ public class Player {
         this.age = age;
     }
 
+    public Club getClub() {
+        return club;
+    }
 
+    void setClub(Club club) {
+        this.club = club;
+    }
 
     public Competition  getCompetition(){
         if(club != null) {

@@ -11,11 +11,6 @@ public class Competition {
         this.name = name;
     }
 
-    void addClubForSwap(Club club){
-        clubs.add(club);
-        club.setCompetition(this);
-    }
-
     void removeClub(Club club){
         clubs.remove(club);
         club.setCompetition(null);
@@ -23,15 +18,22 @@ public class Competition {
 
     public void swapClubs(Club clubIn, Club  clubOut){
         if(clubs.contains(clubOut) && !clubs.contains(clubIn)){
+            Competition competitionOfEnteringClub = clubIn.getCompetition();
             removeClub(clubOut);
-            addClubForSwap(clubIn);
-
+            addClub(clubIn);
+            clubOut.setCompetition(competitionOfEnteringClub);
+            System.out.println("De clubs zijn van competitie gewisseld");
+            return;
         }
+        System.out.println("Kies één club in deze competitie en één andere");
     }
 
     public void addClub(Club club){
         if(clubs.size() < 18){
-            addClubForSwap(club);
+            clubs.add(club);
+            club.setCompetition(this);
+        } else{
+            System.out.println("Competitie is vol. Wissel de club met een andere club");
         }
     }
 

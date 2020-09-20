@@ -1,11 +1,12 @@
 package nl.novi.javaprogrammeren.huiswerk.relaties.two.football;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Club {
     private static final int minPlayers = 18;
     private static final int maxPlayers = 25;
-    private List<Player> players;
+    private List<Player> players = new ArrayList<>();
     private String name;
     private String city;
     private Competition competition;
@@ -15,13 +16,13 @@ public class Club {
         this.city = city;
     }
 
-    public boolean addPlayer(Player player) {
-        if (!players.contains(player)){
-            players.add(player);
-            return true;
+    public void addPlayer(Player player) {
+        if (players.contains(player)){
+            System.out.println("Fout: speler zit al bij deze club");
+            return;
         }
-        System.out.println("Fout: speler zit al bij deze club");
-        return false;
+        players.add(player);
+        player.setClub(this);
     }
 
     public void removePlayer(Player player) {
@@ -34,6 +35,7 @@ public class Club {
             return;
         }
         players.remove(player);
+        player.setClub(null);
     }
 
     public void setCompetition(Competition competition) {
